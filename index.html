@@ -1,0 +1,424 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Inclusão Digital para Idosos</title>
+<style>
+
+:root{
+  --bg:#f7fafc; --text:#222; --muted:#5c6670;
+  --brand:#4CAF50; --brand-dark:#2e7d32;
+  --card:#fff; --focus:#2962ff; --border:#e5e7eb;
+  --shadow:0 10px 24px rgba(0,0,0,.08); --fs:18px;
+}
+body.high-contrast{
+  --bg:#000; --text:#fff; --muted:#e0e0e0;
+  --brand:#ff0; --brand-dark:#ffd600; --card:#111; --focus:#0ff; --border:#999;
+}
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;font:normal var(--fs)/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+
+.header{position:sticky;top:0;z-index:9;background:var(--brand);padding:16px;color:#000}
+.header h1{margin:0;font-weight:800}
+.menu{list-style:none;display:flex;gap:12px;margin:12px 0 0;padding:0}
+.menu a{background:#fff;padding:8px 12px;border-radius:999px;text-decoration:none;color:#000;font-weight:800}
+.a11y-bar{display:flex;gap:8px;margin-top:8px}
+.a11y-btn{border:none;background:#fff;border-radius:8px;padding:8px 12px;font-weight:800;cursor:pointer}
+
+main{max-width:1100px;margin:auto;padding:20px}
+.card{background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);border-radius:16px;padding:18px;margin:0 0 22px}
+.card h2{margin:.2rem 0 .4rem}
+.lead{color:var(--muted);margin:.2rem 0 1rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:.6rem 0 1rem}
+.primary,.secondary{border:none;border-radius:12px;padding:12px 18px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.primary{background:var(--brand-dark);color:#fff}
+.secondary{background:#e8f5e9;color:#1b5e20;border:2px solid #a5d6a7}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.figure{background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+.figcap{padding:8px;color:var(--muted);font-size:.95rem}
+.svg-wrap{display:block;width:100%;aspect-ratio:16/9;background:#f4f7fb}
+
+.tutorial{margin-top:12px}
+.video-wrapper{position:relative;width:100%;aspect-ratio:16/9;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#000;margin-bottom:10px}
+.video-wrapper iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.watch-on-yt{margin:.25rem 0 .75rem}
+.watch-on-yt a{color:#1a73e8;text-decoration:none;font-weight:700}
+.watch-on-yt a:hover{text-decoration:underline}
+.video-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.video-item{border:1px solid var(--border);border-radius:12px;background:#fff;padding:10px}
+.video-item h4{margin:.2rem 0 .6rem;font-size:1rem}
+.video-item button{width:100%;border-radius:10px;border:2px solid var(--brand);background:transparent;padding:10px;font-weight:800;cursor:pointer}
+
+.guide{background:#f6fff8;border-left:4px solid var(--brand);border-radius:8px;padding:12px}
+
+.footer{display:grid;place-items:center;gap:8px;text-align:center;padding:18px;color:var(--muted)}
+.to-top{background:#263238;color:#fff;border:none;border-radius:999px;padding:10px 14px;cursor:pointer}
+
+button:focus,a:focus{outline:3px solid var(--focus);outline-offset:2px}
+@media(min-width:800px){.primary,.secondary{padding:14px 22px}}
+
+.bg-wapp{background:#e6f7eb}.bg-yt{background:#ffe9e9}.bg-cam{background:#eef3f7}.bg-gf{background:#e8f2fd}
+</style>
+</head>
+<body>
+<header class="header">
+  <h1>Aprenda a usar seu celular</h1>
+  <div class="a11y-bar">
+    <button id="btn-font-dec" class="a11y-btn">A−</button>
+    <button id="btn-font-inc" class="a11y-btn">A+</button>
+    <button id="btn-contrast" class="a11y-btn">Alto contraste</button>
+  </div>
+  <nav>
+    <ul class="menu">
+      <li>#whatsappWhatsApp</a></li>
+      <li>#youtubeYouTube</a></li>
+      <li>#cameraCâmera</a></li>
+      <li>#galeriaGoogleFotos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="whatsapp" class="card">
+    <h2>Como usar o WhatsApp</h2>
+    <p class="lead">Envie mensagens, fotos e áudios, crie grupos e faça chamadas de vídeo.</p>
+    <div class="actions">
+      <a class="primary video-link" data-app="whatsapp"
+         href="https://www.youtube.com/watch?v=_G7aN0KM_Ag" target="_blank" rel="noopener">
+         ▶️ Ver tutoriais em vídeo
+      </a>
+      <button class="secondary" data-guide="whatsapp">📖 Ver guia passo a passo</button>
+    </div>
+
+    <div class="gallery">
+      <figure class="figure">
+        <svg class="svg-wrap bg-wapp" viewBox="0 0 640 360" aria-label="WhatsApp — Campo de mensagem">
+          <rect x="150" y="40" rx="24" ry="24" width="340" height="280" fill="#fff" stroke="#bfe6cf"/>
+          <rect x="150" y="40" width="340" height="42" fill="#25D366"/>
+          <circle cx="172" cy="61" r="10" fill="#fff"/>
+          <rect x="188" y="52" width="105" height="16" rx="8" fill="#eaf7ef"/>
+          <!-- balões -->
+          <rect x="170" y="96" width="210" height="24" rx="12" fill="#eaf7ef"/>
+          <rect x="280" y="128" width="180" height="24" rx="12" fill="#dcf8c6"/>
+          <rect x="170" y="160" width="180" height="24" rx="12" fill="#eaf7ef"/>
+          <!-- entrada -->
+          <rect x="150" y="278" width="340" height="42" fill="#f1f6f2" stroke="#d8eadf"/>
+          <rect x="175" y="290" width="240" height="18" rx="9" fill="#fff" stroke="#cfe8d6"/>
+          <circle cx="430" cy="299" r="9" fill="#25D366"/>
+          <polygon points="448,292 462,299 448,306" fill="#25D366"/>
+        </svg>
+        <figcaption class="figcap">Campo de mensagem</figcaption>
+      </figure>
+
+      <figure class="figure">
+        <svg class="svg-wrap bg-wapp" viewBox="0 0 640 360" aria-label="WhatsApp — Anexar foto/arquivo">
+          <rect x="150" y="40" rx="24" ry="24" width="340" height="280" fill="#fff" stroke="#bfe6cf"/>
+          <rect x="150" y="40" width="340" height="42" fill="#25D366"/>
+          <rect x="175" y="290" width="220" height="18" rx="9" fill="#fff" stroke="#cfe8d6"/>
+          <path d="M425 286 q15 -15 30 0 l-55 55 q-15 15 -30 0 q-15 -15 0 -30 l45 -45"
+                fill="none" stroke="#25D366" stroke-width="8" stroke-linecap="round"/>
+          <rect x="175" y="110" width="120" height="90" rx="8" fill="#eaf7ef" stroke="#cfe8d6"/>
+          <polygon points="175,200 235,150 265,175 295,160 295,200" fill="#c9ecd5"/>
+          <circle cx="210" cy="140" r="10" fill="#c9ecd5"/>
+        </svg>
+        <figcaption class="figcap">Anexar foto/arquivo</figcaption>
+      </figure>
+    </div>
+
+    <div class="tutorial" id="tutorial-whatsapp"></div>
+  </section>
+
+  <section id="youtube" class="card">
+    <h2>Como usar o YouTube</h2>
+    <p class="lead">Pesquise vídeos, inscreva-se em canais e ative o sininho.</p>
+    <div class="actions">
+      <a class="primary video-link" data-app="youtube"
+         href="https://www.youtube.com/watch?v=Yi1QJSPMT30" target="_blank" rel="noopener">
+         ▶️ Ver tutoriais em vídeo
+      </a>
+      <button class="secondary" data-guide="youtube">📖 Ver guia passo a passo</button>
+    </div>
+
+    <div class="gallery">
+      <figure class="figure">
+        <svg class="svg-wrap bg-yt" viewBox="0 0 640 360" aria-label="YouTube — Pesquisa">
+          <rect x="110" y="70" width="420" height="38" rx="19" fill="#fff" stroke="#ffa5a5"/>
+          <circle cx="520" cy="89" r="12" fill="none" stroke="#ff0000" stroke-width="4"/>
+          <line x1="528" y1="97" x2="540" y2="109" stroke="#ff0000" stroke-width="4"/>
+          <!-- cards -->
+          <rect x="110" y="135" width="190" height="110" rx="12" fill="#fff" stroke="#ffd0d0"/>
+          <rect x="320" y="135" width="210" height="24" rx="12" fill="#fff" stroke="#ffd0d0"/>
+          <rect x="110" y="260" width="190" height="110" rx="12" fill="#fff" stroke="#ffd0d0"/>
+          <rect x="320" y="260" width="210" height="24" rx="12" fill="#fff" stroke="#ffd0d0"/>
+        </svg>
+        <figcaption class="figcap">Usando a pesquisa</figcaption>
+      </figure>
+      <figure class="figure">
+        <svg class="svg-wrap bg-yt" viewBox="0 0 640 360" aria-label="YouTube — Inscrever-se e sininho">
+          <rect x="120" y="80" width="220" height="42" rx="10" fill="#ff0000"/>
+          <text x="230" y="108" fill="#fff" font-size="20" font-weight="700" text-anchor="middle" font-family="Arial, sans-serif">INSCREVER-SE</text>
+          <path d="M470 80 c20 0 35 20 35 40 v20 l10 14 h-90 l10-14 v-20 c0-20 15-40 35-40z"
+                fill="none" stroke="#ff0000" stroke-width="4"/>
+          <circle cx="470" cy="160" r="6" fill="#ff0000"/>
+        </svg>
+        <figcaption class="figcap">Inscrever-se e ativar sininho</figcaption>
+      </figure>
+    </div>
+
+    <div class="tutorial" id="tutorial-youtube"></div>
+  </section>
+
+  <section id="camera" class="card">
+    <h2>Como usar a Câmera</h2>
+    <p class="lead">Foco, disparo e alternância entre lentes.</p>
+    <div class="actions">
+      <a class="primary video-link" data-app="camera"
+         href="https://www.youtube.com/watch?v=8ypKiN_tutE" target="_blank" rel="noopener">
+         ▶️ Ver tutoriais em vídeo
+      </a>
+      <button class="secondary" data-guide="camera">📖 Ver guia passo a passo</button>
+    </div>
+
+    <div class="gallery">
+      <figure class="figure">
+        <svg class="svg-wrap bg-cam" viewBox="0 0 640 360" aria-label="Câmera — Disparo">
+          <rect x="150" y="40" width="340" height="220" rx="20" fill="#fff" stroke="#cdd7e1"/>
+          <rect x="230" y="100" width="180" height="100" fill="none" stroke="#4CAF50" stroke-dasharray="10,6"/>
+          <circle cx="320" cy="300" r="32" fill="#fff" stroke="#4CAF50" stroke-width="6"/>
+        </svg>
+        <figcaption class="figcap">Botão de disparo</figcaption>
+      </figure>
+      <figure class="figure">
+        <svg class="svg-wrap bg-cam" viewBox="0 0 640 360" aria-label="Câmera — Alternar lentes">
+          <rect x="150" y="40" width="340" height="220" rx="20" fill="#fff" stroke="#cdd7e1"/>
+          <g font-family="Arial, sans-serif" font-weight="700">
+            <circle cx="240" cy="280" r="18" fill="#eaf2f8" stroke="#90a4ae"/>
+            <text x="240" y="286" font-size="14" fill="#607d8b" text-anchor="middle">0.5x</text>
+            <circle cx="320" cy="280" r="18" fill="#4CAF50"/>
+            <text x="320" y="286" font-size="14" fill="#fff" text-anchor="middle">1x</text>
+            <circle cx="400" cy="280" r="18" fill="#eaf2f8" stroke="#90a4ae"/>
+            <text x="400" y="286" font-size="14" fill="#607d8b" text-anchor="middle">3x</text>
+          </g>
+        </svg>
+        <figcaption class="figcap">Alternar lentes</figcaption>
+      </figure>
+    </div>
+
+    <div class="tutorial" id="tutorial-camera"></div>
+  </section>
+
+  <section id="galeria" class="card">
+    <h2>Google Fotos</h2>
+    <p class="lead">Visualize, organize e faça backup automático das fotos.</p>
+    <div class="actions">
+      <a class="primary video-link" data-app="galeria"
+         href="https://www.youtube.com/watch?v=fcEZVsngq4o" target="_blank" rel="noopener">
+         ▶️ Ver tutoriais em vídeo
+      </a>
+      <button class="secondary" data-guide="galeria">📖 Ver guia passo a passo</button>
+    </div>
+
+    <div class="gallery">
+      <figure class="figure">
+        <svg class="svg-wrap bg-gf" viewBox="0 0 640 360" aria-label="Google Fotos — Grade">
+          <rect x="120" y="60" width="400" height="240" rx="12" fill="#fff" stroke="#cbdaf5"/>
+          <g fill="#e8f0fe" stroke="#cbdaf5">
+            <rect x="140" y="80" width="100" height="80" rx="8"/>
+            <rect x="260" y="80" width="100" height="80" rx="8"/>
+            <rect x="380" y="80" width="100" height="80" rx="8"/>
+            <rect x="140" y="180" width="100" height="80" rx="8"/>
+            <rect x="260" y="180" width="100" height="80" rx="8"/>
+            <rect x="380" y="180" width="100" height="80" rx="8"/>
+          </g>
+        </svg>
+        <figcaption class="figcap">Tela inicial (grade de fotos)</figcaption>
+      </figure>
+      <figure class="figure">
+        <svg class="svg-wrap bg-gf" viewBox="0 0 640 360" aria-label="Google Fotos — Backup">
+          <rect x="150" y="60" width="360" height="240" rx="12" fill="#fff" stroke="#cbdaf5"/>
+          <text x="180" y="120" font-family="Arial, sans-serif" font-size="16" fill="#3b5cab" font-weight="700">Backup & sincronização</text>
+          <rect x="180" y="140" width="220" height="18" rx="9" fill="#e8f0fe"/>
+          <rect x="430" y="138" width="50" height="22" rx="11" fill="#4CAF50"/>
+          <circle cx="459" cy="149" r="10" fill="#fff"/>
+        </svg>
+        <figcaption class="figcap">Ativar backup</figcaption>
+      </figure>
+    </div>
+
+    <div class="tutorial" id="tutorial-galeria"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Projeto de Inclusão Digital para Idosos</p>
+  <button id="btn-topo" class="to-top">⬆ Voltar ao topo</button>
+</footer>
+
+<script type="text/javascript">
+/* ===== Acessibilidade ===== */
+const STATE = { fontPx: 18, contrast: false };
+
+function applyA11y() {
+  document.documentElement.style.setProperty('--fs', STATE.fontPx + 'px');
+  document.body.classList.toggle('high-contrast', STATE.contrast);
+}
+applyA11y();
+
+document.getElementById('btn-font-inc').onclick = function () {
+  STATE.fontPx = Math.min(STATE.fontPx + 2, 26);
+  applyA11y();
+};
+document.getElementById('btn-font-dec').onclick = function () {
+  STATE.fontPx = Math.max(STATE.fontPx - 2, 14);
+  applyA11y();
+};
+document.getElementById('btn-contrast').onclick = function () {
+  STATE.contrast = !STATE.contrast;
+  applyA11y();
+};
+document.getElementById('btn-topo').onclick = function () {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+const TUTORIAIS = {
+  whatsapp: {
+    titulo: 'WhatsApp',
+    videoMain: '_G7aN0KM_Ag',
+    extras: [
+      { id: 'ZigZ8bGQUdw', titulo: 'Criar grupo' },
+      { id: 'x7PM_5maZ6I', titulo: 'Mensagem de vídeo' }
+    ],
+    passos: [
+      'Abra o WhatsApp',
+      'Escolha um contato e digite a mensagem',
+      'Para vídeo, toque no ícone de câmera'
+    ]
+  },
+  youtube: {
+    titulo: 'YouTube',
+    videoMain: 'Yi1QJSPMT30',
+    extras: [
+      { id: 'QFZK_oqHsVk', titulo: 'Funções essenciais' }
+    ],
+    passos: [
+      'Abra o YouTube',
+      'Pesquise um vídeo',
+      'Inscreva-se e ative o sininho'
+    ]
+  },
+  camera: {
+    titulo: 'Câmera',
+    videoMain: '8ypKiN_tutE',
+    extras: [
+      { id: '8bPxrpq-LEc', titulo: 'Configuração essencial' }
+    ],
+    passos: [
+      'Abra a câmera',
+      'Toque para focar',
+      'Tire a foto ou grave vídeo'
+    ]
+  },
+  galeria: {
+    titulo: 'Google Fotos',
+    videoMain: 'fcEZVsngq4o',
+    extras: [
+      { id: 'j9Gv4ZTGQdo', titulo: 'Configurar backup' }
+    ],
+    passos: [
+      'Abra o Google Fotos',
+      'Ative backup',
+      'Crie álbuns'
+    ]
+  }
+};
+
+function iframeHTML(id, titulo) {
+  var embed = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0';
+  var html = ''
+    + '<div class="video-wrapper" role="region" aria-label="Vídeo: ' + titulo + '">'
+    +   '<iframe'
+    +     ' src="' + embed + '"'
+    +     ' title="' + titulo + '"'
+    +     ' loading="lazy"'
+    +     ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"'
+    +     ' referrerpolicy="origin-when-cross-origin"'
+    +     ' allowfullscreen>'
+    +   '</iframe>'
+    + '</div>'
+    + '<p class="watch-on-yt">'
+    +   'https://www.youtube.com/watch?v=Assistir direto no YouTube ↗</a>'
+    + '</p>';
+  return html;
+}
+
+function extrasHTML(app) {
+  var e = TUTORIAIS[app].extras || [];
+  if (!e.length) return '';
+  var items = e.map(function (x) {
+    return '' +
+      '<div class="video-item">' +
+      '  <h4>' + x.titulo + '</h4>' +
+      '  <button type="button" data-replace="' + app + '" data-video="' + x.id + '">Assistir</button>' +
+      '</div>';
+  }).join('');
+  return '<h4>Vídeos extras</h4><div class="video-list">' + items + '</div>';
+}
+
+function guideHTML(app) {
+  var t = TUTORIAIS[app];
+  var steps = t.passos.map(function (p) { return '<li>' + p + '</li>'; }).join('');
+  return '<div class="guide"><h3>' + t.titulo + ' — Guia passo a passo</h3><ol>' + steps + '</ol></div>';
+}
+
+function wireExtras(area, app) {
+  var buttons = area.querySelectorAll('button[data-replace]');
+  Array.prototype.forEach.call(buttons, function (b) {
+    b.addEventListener('click', function () {
+      var id = b.getAttribute('data-video');
+      var player = area.querySelector('.video-wrapper');
+      if (player) player.outerHTML = iframeHTML(id, 'Vídeo extra');
+      area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var videoLinks = document.querySelectorAll('a.video-link[data-app]');
+  Array.prototype.forEach.call(videoLinks, function (link) {
+    link.addEventListener('click', function (ev) {
+      var isNewTab = ev.ctrlKey || ev.metaKey || ev.button === 1;
+      if (isNewTab) return;
+
+      ev.preventDefault();
+      var app = link.getAttribute('data-app');
+      var area = document.getElementById('tutorial-' + app);
+      var t = TUTORIAIS[app];
+
+      area.innerHTML =
+        '<h3>' + t.titulo + ' — Vídeo principal</h3>' +
+        iframeHTML(t.videoMain, t.titulo) +
+        extrasHTML(app) +
+        guideHTML(app);
+
+      wireExtras(area, app);
+      area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  var guideBtns = document.querySelectorAll('button[data-guide]');
+  Array.prototype.forEach.call(guideBtns, function (btn) {
+    btn.addEventListener('click', function () {
+      var app = btn.getAttribute('data-guide');
+      var area = document.getElementById('tutorial-' + app);
+      area.innerHTML = guideHTML(app);
+      area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+});
+</script>
+</body>
+</html>
